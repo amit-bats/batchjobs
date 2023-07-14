@@ -15,7 +15,7 @@ store_table_name="product_store"
 
 
 # Read the CSV file and insert data into the database table
-mysql -h "$db_host" -u "$db_user" -P "$db_port" -p"$db_password" --local-infile=1 "$db_store" <<EOF
+mysql -h "$db_host" -u "$db_user" -p"$db_password" --local-infile=1 "$db_store" <<EOF
 LOAD DATA LOCAL INFILE '$csv_file'
 INTO TABLE $store_table_name
 FIELDS TERMINATED BY ','
